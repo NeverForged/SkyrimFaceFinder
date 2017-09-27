@@ -34,9 +34,12 @@ Full disclosure: I'm using my test set more like a validation set, but it's a on
 
 **Examples:**
 
-* No Filter: ![No Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/none.png)
-* Male Filter: ![Male Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/male.png)
-* Female Filter: ![Female Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/female.png)
+* No Filter:
+  ![No Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/none.png)
+* Male Filter:
+  ![Male Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/male.png)
+* Female Filter:
+  ![Female Filter](https://github.com/NeverForged/SkyrimFaceFinder/blob/master/Evaluation/female.png)
 
 Never expected Redguard (figured Imperial, given my heritage) but I totally see it in the facial structure.
 
