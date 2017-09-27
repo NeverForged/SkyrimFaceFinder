@@ -48,24 +48,33 @@ def cut_images():
 
 class SkyrimImages(object):
     '''
-    Class to manage files of images of Dogs, of different sizes and offsets,
+    Class to manage files of images of presets, of different sizes and offsets,
     with the images split into teset and training sets.
     '''
 
-    def __init__(self, root='../Data'):
+    def __init__(self, root='../Data', limit='None'):
         '''Create an object of the class.
         Parameters:
         ----------
         racenames: list of strings of dog names; these should match folder name
         root:      directory to store the image files
         '''
-        lst = [a[0].replace('../Images\\','') for a in os.walk('../Images')]
-        self.racenames  =  [a for a in lst[1:]]
+
         self.root = root
         self.image_id = 0
         self.imagesize = 100
         self.counter = 0
         self.tt_split = 0.3
+        lst = [a[0].replace('../Images\\','') for a in os.walk('../Images')]
+        self.racenames = []
+        for a in lst[1:]:
+            try:
+                int(a[-2:])
+                if limit != 'male':
+                    self.racenames.append(a)
+            except:
+                if limit != 'female':
+                    self.racenames.append(a)
 
     def _make_img(self, dimg, directory):
         '''
@@ -79,6 +88,9 @@ class SkyrimImages(object):
         offset = (int((self.imagesize - width) / 2),
                   int((self.imagesize - height) / 2))
         img.paste(dimg, offset)
+        img.save(directory + '/image{}.png'.format(self.imageid))
+        self.imageid += 1
+        img = ImageOps.mirror(img)
         img.save(directory + '/image{}.png'.format(self.imageid))
         self.imageid += 1
 
